@@ -18,8 +18,7 @@ func NewApp() App {
 	db := NewDB()
 	service := Service{db}
 
-	controller := new(Controller)
-	controller.service = service
+	controller := &Controller{service}
 
 	router := InitializeRouter(*controller)
 
